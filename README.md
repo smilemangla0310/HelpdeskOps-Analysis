@@ -1,177 +1,260 @@
-# HelpDeskOps – Helpdesk Operations Dashboard
+# 📊 HelpDeskOps – Helpdesk Operations Dashboard
 
-HelpDeskOps is a Power BI dashboard that analyzes helpdesk ticket data from 2016–2023.  
-It provides a four-page view across demand, backlog, SLA performance, and agent productivity so support leaders and analysts can quickly understand how the desk is performing.
-
----
-
-## 1. What this dashboard does
-
-This report answers core operational questions:
-
-- How much ticket volume are we handling over time?
-- Where is backlog building up (by priority and issue type)?
-- Are we meeting our SLA commitments, and where are we breaching?
-- How is workload and performance distributed across agents?
-
-The dashboard is built on an `issues` dataset representing helpdesk tickets with fields such as created date, status, priority, type, and assignee.
+![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?logo=powerbi&logoColor=black)
+![SQL](https://img.shields.io/badge/SQL-Analytics-blue)
+![Python](https://img.shields.io/badge/Python-Data%20Cleaning-green)
+![Status](https://img.shields.io/badge/Project-Completed-success)
 
 ---
 
-## 2. Pages and visuals
+## 📌 Project Overview
 
-### Page 1 – Support Overview
+**HelpDeskOps** is an end-to-end **Power BI Operations Analytics Dashboard** that analyzes helpdesk ticket data from **2016–2023**.
 
-High-level summary of the helpdesk:
+The dashboard provides operational visibility into:
 
-- **KPIs**
-  - Ticket Volume (2016–23)
-  - Avg Ticket Age (Days)
-  - Backlog Count
-  - SLA Compliance %
-- **Visuals**
-  - Ticket Volume Trend (by year)
-  - Backlog by Priority
-  - Ticket Age by Issue Type
-- **Filters**
-  - Priority
+- 📈 Ticket demand
+- 📂 Backlog management
+- ⏱ SLA performance
+- 👨‍💻 Agent productivity
 
-This page is the entry point for understanding overall demand, aging, backlog, and basic SLA performance. [347]
+It helps support managers identify operational bottlenecks, improve workload distribution, and monitor service performance through interactive dashboards.
 
 ---
 
-### Page 2 – Workload & Backlog
+# 🎯 Business Problem
 
-Operational workload and queue view:
+Support organizations receive thousands of tickets every year.
 
-- **KPIs**
-  - Open Tickets
-  - In Progress Tickets
-  - Waiting Tickets
-  - Backlog Tickets
-  - Closed Tickets
-- **Visuals**
-  - Tickets by Status
-  - Backlog by Priority
-  - Tickets Created by Month
-  - Backlog Tickets by Issue Type
-- **Filters**
-  - Priority
-  - Date (2016–2023)
+Without proper analytics it becomes difficult to answer questions like:
 
-This page shows where tickets sit in the lifecycle and which priorities/types are driving backlog. [347]
+- How many tickets are we handling?
+- Which priorities create the largest backlog?
+- Are we meeting SLA targets?
+- Which agents are overloaded?
+- Where are operational bottlenecks occurring?
+
+This dashboard transforms raw ticket data into actionable operational insights.
 
 ---
 
-### Page 3 – SLA & Resolution Performance
+# 📂 Dataset
 
-Service level and speed view:
+The dashboard is built on an **Issues** dataset containing ticket-level information including:
 
-- **KPIs**
-  - Resolved Tickets
-  - SLA Compliance %
-  - Avg Ticket Age (Days)
-  - SLA Breached Tickets
-- **Visuals**
-  - Avg Ticket Age (Days) by Issue Type
-  - SLA Compliance % by Priority
-  - SLA Compliance % and Closed Tickets by Month
-  - SLA Breached Tickets by Issue Type
-- **Filters**
-  - Year & Month
+- Ticket Created Date
+- Status
+- Priority
+- Issue Type
+- Assignee
+- Resolution Information
 
-This page highlights SLA adherence, breach patterns, and which issue types and priorities drive delays. [347]
+**Analysis Period:** **2016 – 2023**
 
 ---
 
-### Page 4 – Agent & Team Performance
+# 📊 Dashboard Pages
 
-Agent productivity and workload distribution:
+## 📍 Page 1 — Support Overview
 
-- **KPIs**
-  - Total Agents
-  - Tickets per Agent (Avg)
-  - SLA Compliance %
-  - Avg Ticket Age (Days)
-- **Visuals**
-  - Avg Resolution Hours and Ticket Age by Agent
-  - Tickets by Agent and Priority
-  - Top 10 Agents by Tickets
-  - Tickets Handled by Agent
-- **Filters**
-  - Priority
+### KPIs
 
-This page identifies top contributors, workload imbalances, and potential process or training opportunities at the agent level. [347]
+- Total Ticket Volume
+- Average Ticket Age
+- Backlog Count
+- SLA Compliance %
+
+### Visuals
+
+- Ticket Volume Trend
+- Backlog by Priority
+- Average Ticket Age by Issue Type
+
+### Purpose
+
+Provides an executive summary of helpdesk demand, backlog, ticket aging, and SLA performance.
 
 ---
 
-## 3. Files in this repository
+## 📍 Page 2 — Workload & Backlog
 
-Suggested structure:
+### KPIs
+
+- Open Tickets
+- In Progress Tickets
+- Waiting Tickets
+- Backlog Tickets
+- Closed Tickets
+
+### Visuals
+
+- Tickets by Status
+- Backlog by Priority
+- Monthly Ticket Creation
+- Backlog by Issue Type
+
+### Purpose
+
+Shows where tickets are currently sitting in the support lifecycle and highlights backlog pressure.
+
+---
+
+## 📍 Page 3 — SLA & Resolution Performance
+
+### KPIs
+
+- Resolved Tickets
+- SLA Compliance %
+- Average Ticket Age
+- SLA Breached Tickets
+
+### Visuals
+
+- SLA Compliance by Priority
+- SLA Trend by Month
+- Ticket Age by Issue Type
+- SLA Breaches by Issue Type
+
+### Purpose
+
+Evaluates service-level performance and identifies major causes of SLA breaches.
+
+---
+
+## 📍 Page 4 — Agent & Team Performance
+
+### KPIs
+
+- Total Agents
+- Average Tickets per Agent
+- SLA Compliance
+- Average Ticket Age
+
+### Visuals
+
+- Top 10 Agents
+- Tickets by Agent & Priority
+- Resolution Time by Agent
+- Ticket Distribution
+
+### Purpose
+
+Analyzes workload distribution and identifies productivity differences across support agents.
+
+---
+
+# 📁 Repository Structure
 
 ```text
-helpdeskops-dashboard/
-├── HelpdeskOps_Dashboard_Final.pbix      # Power BI report
-├── README.md                             # This file
-├── HelpDeskOps_Report_Document.md        # Detailed report write-up (optional)
-├── dax/                                  # DAX measures and logic (optional)
-│   └── measures.md
-├── data_sample/                          # Anonymized sample data (optional)
-│   └── issues_sample.csv
-└── screenshots/                          # Page screenshots
-    ├── page1_support_overview.png
-    ├── page2_workload_backlog.png
-    ├── page3_sla_resolution.png
-    └── page4_agent_team.png
+HelpDeskOps-Analysis/
+│
+├── Dashboard-images/
+│   ├── Support Overview.png
+│   ├── Workload & Backlog.png
+│   ├── SLA & Resolution Performance.png
+│   └── Agent and Team Performance.png
+│
+├── Datasets/
+│
+├── HelpdeskOps.pbix
+├── HelpdeskOps_Analysis_Report.pdf
+├── Measures.md
+└── README.md
+```
 
 ---
 
-## 4. How to use the dashboard
+# 🚀 How to Use
 
-1. **Download** `HelpdeskOps_Dashboard_Final.pbix` from this repository.
-2. **Open** it in Power BI Desktop (latest version recommended).
-3. If connecting to your own data:
-   - Map your ticket table to the `issues` model,
-   - Ensure key fields exist (created date, status, priority, type, assignee).
-4. Use the slicers (priority, date, issue type, agent) on each page to explore:
-   - Overall ticket demand and backlog,
-   - SLA violations and aging,
-   - Agent-level workload and performance.
-
----
-
-## 5. Data & metric notes
-
-- Data is filtered from **2016-01-01** onward. 
-- Where a true resolution timestamp is not available, **ticket age** is used as a proxy for resolution speed.
-- Backlog is defined as tickets that are not in a final closed/resolved status.
-- SLA metrics assume an underlying SLA flag/logic in the dataset (e.g., SLA met vs breached) and may need to be adapted for other environments.
+1. Download **HelpdeskOps.pbix**
+2. Open using **Power BI Desktop**
+3. Refresh the data (if required)
+4. Navigate across all dashboard pages
+5. Use slicers to filter by:
+   - Priority
+   - Date
+   - Issue Type
+   - Agent
 
 ---
 
-## Dashboard Preview
+# 📏 KPI Definitions
 
-### Executive Dashboard
+| KPI | Description |
+|------|-------------|
+| Ticket Volume | Total number of tickets created |
+| Backlog | Tickets not yet resolved or closed |
+| Average Ticket Age | Average age of unresolved tickets |
+| SLA Compliance | Percentage of tickets meeting SLA |
+| SLA Breached | Tickets exceeding SLA |
+| Tickets per Agent | Average workload handled by each agent |
 
-![Overview](Dashboard-images/Support Overview.png)
+---
 
-### Workload Dashboard
+# 📸 Dashboard Preview
 
-![Workload](Dashboard-images/Workload & Backlog.png)
+## Executive Dashboard
 
-### SLA Dashboard
+![Executive Dashboard](Dashboard-images/Support_Overview.png)
 
-![SLA](Dashboard-images/SLA & Resolution Performance.png)
+---
 
-### Agent Dashboard
+## Workload & Backlog
 
-![Agent](Dashboard-images/Agent and Team Performance.png)
+![Workload Dashboard](Dashboard-images/Workload_Backlog.png)
 
+---
 
+## SLA & Resolution Performance
 
-## 6.Key insights from the current dataset include:
+![SLA Dashboard](Dashboard-images/SLA _&_Resolution_Performance.png)
 
-- Ticket volume peaks around 2016 and 2022, then declines in 2023. 
-- Backlog is concentrated in Medium and High priority tickets, indicating sustained pressure on important work. - SLA compliance is relatively low (~24.6%), with a sizable number of SLA-breached tickets, especially for certain issue types.
- - Agent workload is uneven, with a small number of agents carrying a large portion of tickets. 
+---
 
+## Agent & Team Performance
+
+![Agent Dashboard](Dashboard-images/Agent_and_Team_Performance.png)
+
+---
+
+# 💡 Key Insights
+
+- 📈 Ticket volume peaks around **2016** and **2022** before declining in **2023**.
+- 📂 Backlog is concentrated in **Medium** and **High** priority tickets.
+- ⏱ Overall **SLA Compliance is approximately 24.6%**, indicating opportunities for operational improvement.
+- ⚠ Ticket and Service issue types contribute the largest number of SLA breaches.
+- 👥 Agent workload is unevenly distributed, with a small number of agents handling a significant share of tickets.
+
+---
+
+# 🎯 Business Recommendations
+
+- Reduce backlog through regular aging reviews.
+- Improve SLA monitoring by priority and issue type.
+- Balance workload across support agents.
+- Prioritize aging Medium and High priority tickets.
+- Continuously monitor operational KPIs using the dashboard.
+
+---
+
+# 🛠 Tech Stack
+
+- **Power BI**
+- **Power Query**
+- **DAX**
+- **SQL**
+- **Python (Data Preparation)**
+
+---
+
+# 👤 Author
+
+**Smile Mangla**
+
+B.Tech CSE (Data Science)
+
+Power BI • SQL • Python • Data Analytics
+
+---
+
+⭐ If you found this project useful, consider giving the repository a star!
