@@ -206,9 +206,7 @@ HelpDeskOps-Analysis/
 ---
 
 ## SLA & Resolution Performance
-
-![SLA Dashboard](Dashboard-images/SLA _&_Resolution_Performance.png)
-
+![SLA Dashboard](Dashboard-images/sla_resolution.png)
 ---
 
 ## Agent & Team Performance
