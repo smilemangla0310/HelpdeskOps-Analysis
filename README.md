@@ -142,19 +142,36 @@ helpdeskops-dashboard/
 
 ## 5. Data & metric notes
 
-- Data is filtered from **2016-01-01** onward. [347]
+- Data is filtered from **2016-01-01** onward. 
 - Where a true resolution timestamp is not available, **ticket age** is used as a proxy for resolution speed.
 - Backlog is defined as tickets that are not in a final closed/resolved status.
 - SLA metrics assume an underlying SLA flag/logic in the dataset (e.g., SLA met vs breached) and may need to be adapted for other environments.
 
-If you reuse this report, review and adjust the DAX measures to align with your organization’s specific SLA rules and ticket lifecycle.
-
 ---
+
+## Dashboard Preview
+
+### Executive Dashboard
+
+![Overview](Dashboard-images/Support Overview.png)
+
+### Workload Dashboard
+
+![Workload](Dashboard-images/Workload & Backlog.png)
+
+### SLA Dashboard
+
+![SLA](Dashboard-images/SLA & Resolution Performance.png)
+
+### Agent Dashboard
+
+![Agent](Dashboard-images/Agent and Team Performance.png)
+
+
 
 ## 6.Key insights from the current dataset include:
 
-- Ticket volume peaks around 2016 and 2022, then declines in 2023. [347]
-- Backlog is concentrated in Medium and High priority tickets, indicating sustained pressure on important work. [347]
-- SLA compliance is relatively low (~24.6%), with a sizable number of SLA-breached tickets, especially for certain issue types. [347]
-- Agent workload is uneven, with a small number of agents carrying a large portion of tickets. [347]
+- Ticket volume peaks around 2016 and 2022, then declines in 2023. 
+- Backlog is concentrated in Medium and High priority tickets, indicating sustained pressure on important work. - SLA compliance is relatively low (~24.6%), with a sizable number of SLA-breached tickets, especially for certain issue types.
+ - Agent workload is uneven, with a small number of agents carrying a large portion of tickets. 
 
